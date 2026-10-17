@@ -1,0 +1,1408 @@
+<!DOCTYPE html>
+<html lang="th" class="scroll-smooth dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PORTFOLIO | พงษ์ศิริ ศิริพงษ์ - Graphic Designer</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Prompt & Kanit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,300;0,400;0,600;0,700;0,800;1,400&family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            red: '#e60033',
+                            crimson: '#c8102e',
+                            dark: '#0f0f13',
+                            card: '#18181f',
+                            accent: '#ff2a5f'
+                        }
+                    },
+                    fontFamily: {
+                        kanit: ['Kanit', 'sans-serif'],
+                        prompt: ['Prompt', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Prompt', sans-serif;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        h1, h2, h3, h4, .font-title {
+            font-family: 'Kanit', sans-serif;
+        }
+
+        /* Glitch Animation Effect for PORTFOLIO Header */
+        .glitch-text {
+            position: relative;
+            display: inline-block;
+            text-shadow: 0 0 10px rgba(255, 42, 95, 0.8), 0 0 20px rgba(230, 0, 51, 0.6);
+        }
+
+        .glitch-text::before,
+        .glitch-text::after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            clip: rect(0, 0, 0, 0);
+        }
+
+        .glitch-text::before {
+            left: -2px;
+            text-shadow: 2px 0 #ff0055;
+            animation: glitch-anim-1 2s infinite linear alternate-reverse;
+        }
+
+        .glitch-text::after {
+            left: 2px;
+            text-shadow: -2px 0 #00e5ff;
+            animation: glitch-anim-2 3s infinite linear alternate-reverse;
+        }
+
+        @keyframes glitch-anim-1 {
+            0% { clip: rect(20px, 9999px, 15px, 0); }
+            20% { clip: rect(42px, 9999px, 78px, 0); }
+            40% { clip: rect(10px, 9999px, 85px, 0); }
+            60% { clip: rect(65px, 9999px, 12px, 0); }
+            80% { clip: rect(30px, 9999px, 50px, 0); }
+            100% { clip: rect(80px, 9999px, 5px, 0); }
+        }
+
+        @keyframes glitch-anim-2 {
+            0% { clip: rect(70px, 9999px, 10px, 0); }
+            20% { clip: rect(15px, 9999px, 60px, 0); }
+            40% { clip: rect(85px, 9999px, 5px, 0); }
+            60% { clip: rect(25px, 9999px, 90px, 0); }
+            80% { clip: rect(50px, 9999px, 30px, 0); }
+            100% { clip: rect(5px, 9999px, 75px, 0); }
+        }
+
+        /* Hexagon Shape Styling */
+        .hexagon-frame {
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+        }
+
+        .hexagon-border {
+            position: relative;
+            background: linear-gradient(135deg, #ff2a5f, #e60033, #333);
+            padding: 4px;
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+        }
+
+        /* Geometric background grid overlay */
+        .geo-bg {
+            background-image: radial-gradient(rgba(230, 0, 51, 0.15) 1px, transparent 0);
+            background-size: 24px 24px;
+        }
+
+        /* Image hover zoom and gallery card styling */
+        .gallery-card {
+            position: relative;
+            overflow: hidden;
+            border-radius: 0.75rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .gallery-card:hover {
+            transform: translateY(-5px);
+            border-color: #ff2a5f;
+            box-shadow: 0 10px 25px -5px rgba(230, 0, 51, 0.4);
+        }
+
+        .gallery-card img {
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-card:hover img {
+            transform: scale(1.06);
+        }
+
+        /* Red Accent Ribbon Header */
+        .section-ribbon {
+            position: relative;
+            display: inline-block;
+            background: linear-gradient(90deg, #e60033 0%, #a00020 100%);
+            color: #ffffff;
+            padding: 6px 28px;
+            clip-path: polygon(0 0, 92% 0, 100% 100%, 8% 100%);
+            text-transform: uppercase;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0d0d12;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #e60033;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #ff2a5f;
+        }
+                /* ===== Scroll Progress Bar ===== */
+        #scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 4px;
+            width: 0%;
+            z-index: 60;
+            background: linear-gradient(90deg, #ff2a5f, #e60033, #ff7a9c);
+            box-shadow: 0 0 10px rgba(255, 42, 95, 0.8);
+            transition: width 0.1s linear;
+        }
+
+        /* ===== Fade-in on Scroll ===== */
+        .reveal {
+            opacity: 0;
+        }
+        .reveal.is-visible {
+            animation: fadeUp 0.8s ease-out both;
+            animation-delay: var(--reveal-delay, 0ms);
+        }
+        .reveal.reveal-done {
+            opacity: 1;
+            animation: none;
+        }
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .reveal { opacity: 1; }
+            .reveal.is-visible { animation: none; }
+        }
+        /* ===== Album badge บนการ์ด ===== */
+        .album-badge {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            z-index: 5;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 3px 10px;
+            font-size: 12px;
+            font-weight: 600;
+            color: #fff;
+            background: rgba(0, 0, 0, 0.65);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            border-radius: 9999px;
+            backdrop-filter: blur(6px);
+            pointer-events: none;
+        }
+
+        /* ===== Viewer (ป็อปอัปรูป) ===== */
+        #viewer {
+            position: fixed;
+            inset: 0;
+            z-index: 80;
+            display: none;
+            flex-direction: column;
+            background: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(16px);
+        }
+        #viewer.open { display: flex; }
+
+        .viewer-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            padding: 14px 16px;
+            color: #fff;
+        }
+        .viewer-tools { display: flex; align-items: center; gap: 8px; }
+        .viewer-btn {
+            width: 40px;
+            height: 40px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 9999px;
+            color: #fff;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            transition: background 0.2s, transform 0.2s;
+        }
+        .viewer-btn:hover { background: #e60033; transform: scale(1.08); }
+        .viewer-btn:disabled { opacity: 0.35; pointer-events: none; }
+        .zoom-label {
+            min-width: 48px;
+            text-align: center;
+            font-size: 13px;
+            font-variant-numeric: tabular-nums;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .viewer-stage {
+            position: relative;
+            flex: 1;
+            min-height: 0;
+            display: flex;
+            align-items: center;
+        }
+        .film {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            width: 100%;
+            height: 100%;
+            padding: 8px 24px;
+            overflow-x: auto;
+            overflow-y: auto;
+            cursor: grab;
+            scrollbar-width: thin;
+            scrollbar-color: #e60033 transparent;
+        }
+        .film.dragging { cursor: grabbing; user-select: none; }
+        /* ให้รูปอยู่กลางจอเมื่อมีน้อย และเลื่อนได้เมื่อมีมาก */
+        .film > :first-child { margin-left: auto; }
+        .film > :last-child { margin-right: auto; }
+
+        .film-item {
+            flex: 0 0 auto;
+            height: auto;
+            width: auto;
+            min-width: 120px;
+            min-height: 160px;
+            object-fit: contain;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            background: rgba(255, 255, 255, 0.04);
+            box-shadow: 0 20px 50px -10px rgba(0, 0, 0, 0.7);
+            -webkit-user-drag: none;
+            user-select: none;
+        }
+
+        .nav-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 5;
+            width: 48px;
+            height: 48px;
+            font-size: 18px;
+        }
+        .nav-arrow.prev { left: 12px; }
+        .nav-arrow.next { right: 12px; }
+
+        .viewer-bottom {
+            padding: 12px 16px 20px;
+            text-align: center;
+            color: #fff;
+        }
+        #viewer-caption {
+            display: inline-block;
+            padding: 6px 18px;
+            font-size: 15px;
+            font-weight: 500;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 9999px;
+        }
+        .viewer-dots {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 10px;
+        }
+        .viewer-dots button {
+            width: 8px;
+            height: 8px;
+            border-radius: 9999px;
+            background: rgba(255, 255, 255, 0.3);
+            transition: all 0.2s;
+        }
+        .viewer-dots button.active { width: 22px; background: #ff2a5f; }
+    </style>
+</head>
+<body class="bg-slate-100 text-slate-800 dark:bg-[#0d0d12] dark:text-gray-100 geo-bg selection:bg-brand-red selection:text-white min-h-screen">
+    <div id="scroll-progress"></div>
+    <!-- NAVIGATION HEADER -->
+    <header id="main-header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white/90 dark:bg-brand-dark/90 backdrop-blur-md border-b border-slate-200 dark:border-white/10 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16 sm:h-20">
+                <!-- Logo / Brand -->
+                <a href="#hero" class="flex items-center gap-3 group">
+                    <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-brand-red to-red-800 flex items-center justify-center font-bold text-white shadow-lg shadow-brand-red/30 group-hover:scale-105 transition-transform">
+                        PS
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="font-title font-bold text-lg text-slate-900 dark:text-white leading-none tracking-wide">Pongsiri Portfolio</span>
+                        <span class="text-xs text-brand-accent font-light">GRAPHIC DESIGNER</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation Links -->
+                <nav class="hidden xl:flex items-center gap-1 lg:gap-2 text-sm font-medium text-slate-700 dark:text-gray-300">
+                    <a href="#hero" class="px-3 py-2 rounded-md hover:text-brand-red dark:hover:text-white hover:bg-black/5 dark:hover:bg-white/5 transition">หน้าแรก</a>
+                    <a href="#about" class="px-3 py-2 rounded-md hover:text-brand-red dark:hover:text-white hover:bg-black/5 dark:hover:bg-white/5 transition">เกี่ยวกับฉัน</a>
+                    <a href="#portfolio-gallery" class="px-3 py-2 rounded-md hover:text-brand-red dark:hover:text-white hover:bg-black/5 dark:hover:bg-white/5 transition">ผลงานรวม</a>
+                    <a href="#certificates" class="px-3 py-2 rounded-md hover:text-brand-red dark:hover:text-white hover:bg-black/5 dark:hover:bg-white/5 transition">เกียรติบัตร</a>
+                    <a href="#contact-section" class="px-3 py-2 rounded-md text-brand-accent font-semibold hover:bg-brand-red/10 transition">ติดต่อ</a>
+                </nav>
+
+                <!-- Actions: Theme Switcher & Mobile Menu Button -->
+                <div class="flex items-center gap-3">
+                    <button id="theme-toggle" class="p-2.5 rounded-full bg-slate-200 dark:bg-white/10 text-slate-700 dark:text-amber-400 hover:scale-110 transition-transform">
+                        <i id="theme-icon" class="fa-solid fa-moon text-lg"></i>
+                    </button>
+
+                    <button id="mobile-menu-btn" class="xl:hidden p-2 rounded-lg bg-slate-200 dark:bg-white/10 text-slate-800 dark:text-gray-300">
+                        <i class="fa-solid fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+        <div id="mobile-menu" class="hidden xl:hidden bg-slate-100 dark:bg-brand-dark/95 border-b border-slate-200 dark:border-white/10 px-4 pt-2 pb-6 space-y-2">
+            <a href="#hero" class="mobile-link block px-3 py-2 rounded-md text-base text-slate-800 dark:text-gray-200 hover:bg-brand-red/20">หน้าแรก (Hero)</a>
+            <a href="#about" class="mobile-link block px-3 py-2 rounded-md text-base text-slate-800 dark:text-gray-200 hover:bg-brand-red/20">เกี่ยวกับฉัน (About)</a>
+            <a href="#portfolio-gallery" class="mobile-link block px-3 py-2 rounded-md text-base text-slate-800 dark:text-gray-200 hover:bg-brand-red/20">ผลงานทั้งหมด (Portfolio Gallery)</a>
+            <a href="#certificates" class="mobile-link block px-3 py-2 rounded-md text-base text-slate-800 dark:text-gray-200 hover:bg-brand-red/20">เกียรติบัตร (Certificates)</a>
+            <a href="#contact-section" class="mobile-link block px-3 py-2 rounded-md text-base text-brand-accent font-semibold hover:bg-brand-red/20">ช่องทางติดต่อ (Contact)</a>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT CONTAINER -->
+    <main class="pt-16">
+
+        <!-- SECTION 1: HERO / COVER PAGE (รูปที่ 1) -->
+        <section id="hero" class="relative min-h-screen flex items-center justify-center py-16 px-4 overflow-hidden border-b border-slate-200 dark:border-white/10">
+            <div class="max-w-6xl w-full mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
+                <!-- Left Details -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-block bg-brand-red/10 border border-brand-red/30 backdrop-blur-md px-5 py-2 rounded-full text-sm font-medium text-brand-accent shadow-inner">
+                        <i class="fa-solid fa-folder-open mr-2"></i> แฟ้มสะสมผลงาน
+                    </div>
+
+                    <h1 class="text-5xl sm:text-7xl lg:text-8xl font-black tracking-tight uppercase leading-none">
+                        <span class="glitch-text text-slate-900 dark:text-white" data-text="PORTFOLIO">PORTFOLIO</span>
+                    </h1>
+
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+                        <span class="text-2xl sm:text-3xl font-bold text-slate-800 dark:text-white">ตำแหน่ง: <span class="text-brand-accent">กราฟฟิก</span></span>
+                        <span class="hidden sm:inline text-gray-500">|</span>
+                        <span class="text-lg text-slate-600 dark:text-gray-300">GRAPHIC DESIGN</span>
+                    </div>
+
+                    <!-- Visual Hexagon Avatars -->
+                    <div class="flex justify-center lg:justify-start gap-6 py-4">
+                        <div class="hexagon-border w-28 h-28 sm:w-36 sm:h-36 shadow-lg shadow-brand-red/20 transform hover:scale-105 transition">
+                            <div class="hexagon-frame w-full h-full bg-gray-900 flex items-center justify-center relative">
+                                <img src="โปรไฟล์/1.jpg" alt="Chiki" class="w-full h-full object-cover">
+                                <div class="absolute top-2 right-2 bg-red-600 text-[10px] px-1.5 py-0.5 rounded text-white font-mono font-bold"></div>
+                            </div>
+                        </div>
+                        <div class="hexagon-border w-28 h-28 sm:w-36 sm:h-36 shadow-lg shadow-brand-red/20 transform hover:scale-105 transition">
+                            <div class="hexagon-frame w-full h-full bg-gray-900 flex items-center justify-center">
+                                <img src="โปรไฟล์/2.jpg" alt="Chikai" class="w-full h-full object-cover">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Education Details from Cover -->
+                    <div class="bg-white dark:bg-[#18181f] p-6 rounded-2xl border-l-4 border-l-brand-red border border-slate-200 dark:border-white/10 space-y-2 text-left max-w-xl mx-auto lg:mx-0 shadow-2xl">
+                        <p class="text-lg font-semibold text-slate-900 dark:text-white flex items-center gap-2">
+                            <i class="fa-solid fa-graduation-cap text-brand-red"></i> สาขาวิชาออกแบบผลิตภัณฑ์และกราฟิก
+                        </p>
+                        <p class="text-sm text-slate-600 dark:text-gray-300 pl-7">คณะเทคโนโลยีอุตสาหกรรม</p>
+                        <p class="text-sm text-brand-accent font-medium pl-7">มหาวิทยาลัยราชภัฏกำแพงเพชร</p>
+                    </div>
+                </div>
+
+                <!-- Right Profile Photo -->
+                <div class="lg:col-span-5 flex justify-center">
+                    <div class="relative w-full max-w-md">
+                        <div class="absolute -inset-2 bg-gradient-to-r from-brand-red to-pink-600 rounded-3xl blur opacity-30 transform -rotate-3"></div>
+                        <div class="bg-white dark:bg-[#18181f] relative rounded-3xl overflow-hidden border border-slate-200 dark:border-white/20 p-3 shadow-2xl">
+                            <div class="relative aspect-[3/4] rounded-2xl overflow-hidden bg-gray-900">
+                                <img src="โปรไฟล์/3.jpg" alt="พงษ์ศิริ" class="w-full h-full object-cover">
+                                <div class="absolute bottom-0 inset-x-0 p-6 bg-gradient-to-t from-black/90 via-black/40 to-transparent text-white">
+                                    <h3 class="text-2xl font-bold">นาย พงษ์ศิริ ศิริพงษ์</h3>
+                                    <p class="text-sm text-brand-accent">Graphic Designer & Visual Artist</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2: ABOUT & PROFILE SECTION (รูปที่ 2) -->
+        <section id="about" class="py-20 px-4 max-w-7xl mx-auto border-b border-slate-200 dark:border-white/10">
+            <div class="text-center mb-16">
+                <span class="section-ribbon text-xl">เกี่ยวกับฉัน & ประวัติ</span>
+                <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white mt-4">PROFILE & EDUCATION</h2>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+                <!-- Left Column -->
+                <div class="lg:col-span-5 space-y-8">
+                    <!-- Photo Hexagon Card -->
+                    <div class="bg-white dark:bg-[#18181f] p-6 rounded-2xl text-center space-y-4 border border-slate-200 dark:border-white/10 shadow-lg">
+                        <div class="hexagon-border w-48 h-56 mx-auto shadow-2xl">
+                            <div class="hexagon-frame w-full h-full bg-gray-900">
+                                <img src="โปรไฟล์/4.png" alt="พงษ์ศิริใส่สูท" class="w-full h-full object-cover">
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-slate-900 dark:text-white">ชื่อ นาย พงษ์ศิริ ศิริพงษ์</h3>
+                            <p class="text-brand-accent font-semibold tracking-wider">GRAPHIC DESIGN</p>
+                        </div>
+                    </div>
+
+                    <!-- About Me -->
+                    <div class="bg-white dark:bg-[#18181f] p-6 rounded-2xl border-t-4 border-brand-red border border-slate-200 dark:border-white/10 space-y-3 shadow-lg">
+                        <h4 class="text-xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
+                            <i class="fa-solid fa-user-tag text-brand-red"></i> เกี่ยวกับฉัน
+                        </h4>
+                        <p class="text-slate-600 dark:text-gray-300 leading-relaxed text-sm sm:text-base">
+                            "ทำงานได้หลากหลาย วาดรูป ทำกราฟฟิก เขียนแปรน ถ่ายรูป ไม่ค่อยชอบงานเอกสาร ชอบเล่นกีฬา และออกกำลังกาย พร้อมที่จะเรียนรู้อะไรใหม่ๆ เป็นคนตลก เฟรนลี่ Chill guy"
+                        </p>
+                    </div>
+
+                    <!-- Program Skills -->
+                    <div class="bg-white dark:bg-[#18181f] p-6 rounded-2xl border-t-4 border-brand-red border border-slate-200 dark:border-white/10 space-y-4 shadow-lg">
+                        <h4 class="text-xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
+                            <i class="fa-solid fa-laptop-code text-brand-red"></i> PROGRAM / SKILLS
+                        </h4>
+                        <div class="grid grid-cols-2 gap-3 text-sm font-medium">
+                            <div class="bg-slate-100 dark:bg-white/5 p-3 rounded-xl flex items-center gap-3"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fb/Adobe_Illustrator_CC_icon.svg/960px-Adobe_Illustrator_CC_icon.svg.png?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=thumbnail&_=20251029195730" alt="Illustrator" class="w-6 h-6 object-contain shrink-0"> Illustrator</div>
+                            <div class="bg-slate-100 dark:bg-white/5 p-3 rounded-xl flex items-center gap-3"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/a/af/Adobe_Photoshop_CC_icon.svg/500px-Adobe_Photoshop_CC_icon.svg.png?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=thumbnail" alt="Photoshop" class="w-6 h-6 object-contain shrink-0"> Photoshop</div>
+                            <div class="bg-slate-100 dark:bg-white/5 p-3 rounded-xl flex items-center gap-3"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b6/Adobe_Photoshop_Lightroom_CC_logo.svg/1280px-Adobe_Photoshop_Lightroom_CC_logo.svg.png?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=thumbnail" alt="Lightroom" class="w-6 h-6 object-contain shrink-0"> Lightroom</div>
+                            <div class="bg-slate-100 dark:bg-white/5 p-3 rounded-xl flex items-center gap-3"><img src="https://www.sketchupaustralia.com.au/wp-content/uploads/SketchUp-Mark-1200pxl-RGB.png" alt="SketchUp" class="w-6 h-6 object-contain shrink-0"> SketchUp</div>
+                            <div class="bg-slate-100 dark:bg-white/5 p-3 rounded-xl flex items-center gap-3"><img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/autocad-icon.png" alt="AutoCAD" class="w-6 h-6 object-contain shrink-0"> AutoCAD</div>
+                            <div class="bg-slate-100 dark:bg-white/5 p-3 rounded-xl flex items-center gap-3"><img src="https://upload.wikimedia.org/wikipedia/commons/1/14/Clipstudiopaint_app_logo.png?utm_source=th.wikipedia.org&utm_campaign=index&utm_content=original" alt="Clipstudio" class="w-6 h-6 object-contain shrink-0"> Clipstudio</div>
+                            <div class="bg-slate-100 dark:bg-white/5 p-3 rounded-xl flex items-center gap-3 col-span-2"><img src="https://logo-teka.com/wp-content/uploads/2025/09/canva-icon-logo.svg" alt="Canva" class="w-6 h-6 object-contain shrink-0"> Canva</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column -->
+                <div class="lg:col-span-7 space-y-8">
+                    <!-- Education Timeline -->
+                    <div class="bg-white dark:bg-[#18181f] p-6 sm:p-8 rounded-2xl border-t-4 border-brand-red border border-slate-200 dark:border-white/10 space-y-6 shadow-lg">
+                        <h4 class="text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-3">
+                            <i class="fa-solid fa-graduation-cap text-brand-red"></i> การศึกษา (EDUCATION)
+                        </h4>
+                        <div class="space-y-6 border-l-2 border-brand-red/40 pl-6 ml-2">
+                            <div>
+                                <h5 class="text-lg font-bold text-slate-900 dark:text-white">มัธยมศึกษาตอนต้น (2561-2566)</h5>
+                                <p class="text-slate-600 dark:text-gray-300">โรงเรียนวัชรวิทยาคม</p>
+                                <span class="inline-block mt-1 text-xs font-semibold px-2.5 py-1 rounded-md bg-slate-100 dark:bg-white/10 text-brand-accent">เกรดเฉลี่ย : 2.21</span>
+                            </div>
+                            <div>
+                                <h5 class="text-lg font-bold text-slate-900 dark:text-white">มัธยมศึกษาตอนปลาย (2561-2566)</h5>
+                                <p class="text-slate-600 dark:text-gray-300">โรงเรียนกำแพงเพชรพิทยาคม</p>
+                                <span class="inline-block mt-1 text-xs font-semibold px-2.5 py-1 rounded-md bg-slate-100 dark:bg-white/10 text-brand-accent">เกรดเฉลี่ย : 2.07</span>
+                            </div>
+                            <div>
+                                <h5 class="text-lg font-bold text-slate-900 dark:text-white">ระดับปริญญาตรี (ปัจจุบันกำลังศึกษาอยู่)</h5>
+                                <p class="text-slate-700 dark:text-gray-200 font-medium">มหาวิทยาลัยราชภัฏกำแพงเพชร</p>
+                                <p class="text-sm text-slate-500 dark:text-gray-400">คณะเทคโนโลยีอุตสาหกรรม สาขาออกแบบผลิตภัณฑ์และกราฟิก</p>
+                                <span class="inline-block mt-2 text-xs font-semibold px-3 py-1 rounded-md bg-brand-red/10 text-brand-accent border border-brand-red/30">เกรดเฉลี่ย (ปี1-3) : 2.72</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Hobbies -->
+                    <div class="bg-white dark:bg-[#18181f] p-6 sm:p-8 rounded-2xl border-t-4 border-brand-red border border-slate-200 dark:border-white/10 space-y-4 shadow-lg">
+                        <h4 class="text-xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
+                            <i class="fa-solid fa-gamepad text-brand-red"></i> งานอดิเรก
+                        </h4>
+                        <ul class="space-y-2 text-slate-600 dark:text-gray-300 text-sm sm:text-base">
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check-circle text-brand-accent"></i> ทุกกิจกรรมสร้างสรรค์เกี่ยวกับงานศิลปะ drawing, painting</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check-circle text-brand-accent"></i> Photograph (การถ่ายภาพ)</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check-circle text-brand-accent"></i> ออกกำลังกาย / เล่นกีฬา</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: PORTFOLIO WORKS WITH TAB FILTER (รูปที่ 3 - 10) -->
+        <section id="portfolio-gallery" class="py-20 px-4 max-w-7xl mx-auto border-b border-slate-200 dark:border-white/10">
+            <div class="text-center mb-10">
+                <span class="section-ribbon text-xl">PORTFOLIO SECTIONS 01 - 09</span>
+                <h2 class="text-4xl font-bold text-slate-900 dark:text-white mt-4">รวมผลงานการทำงาน (PORTFOLIO GALLERY)</h2>
+                <p class="text-slate-600 dark:text-gray-400 text-sm mt-2">เลือกหมวดหมู่ที่ต้องการชมผลงาน</p>
+            </div>
+
+            <!-- Portfolio Tab Controls -->
+            <div class="flex flex-wrap items-center justify-center gap-2 mb-10 text-sm">
+                <button onclick="filterPortfolio('all')" class="tab-btn active px-4 py-2 rounded-full bg-brand-red text-white font-medium shadow-md transition">ทั้งหมด (All)</button>
+                <button onclick="filterPortfolio('people')" class="tab-btn px-4 py-2 rounded-full bg-slate-200 dark:bg-white/10 hover:bg-brand-red hover:text-white text-slate-700 dark:text-gray-300 transition">01. ถ่ายภาพคน</button>
+                <button onclick="filterPortfolio('view')" class="tab-btn px-4 py-2 rounded-full bg-slate-200 dark:bg-white/10 hover:bg-brand-red hover:text-white text-slate-700 dark:text-gray-300 transition">02. ถ่ายภาพวิว</button>
+                <button onclick="filterPortfolio('drawing')" class="tab-btn px-4 py-2 rounded-full bg-slate-200 dark:bg-white/10 hover:bg-brand-red hover:text-white text-slate-700 dark:text-gray-300 transition">03. DRAWING/ขาวดำ</button>
+                <button onclick="filterPortfolio('color')" class="tab-btn px-4 py-2 rounded-full bg-slate-200 dark:bg-white/10 hover:bg-brand-red hover:text-white text-slate-700 dark:text-gray-300 transition">04. งานใช้สี</button>
+                <button onclick="filterPortfolio('comic')" class="tab-btn px-4 py-2 rounded-full bg-slate-200 dark:bg-white/10 hover:bg-brand-red hover:text-white text-slate-700 dark:text-gray-300 transition">05. ออกแบบการ์ตูน</button>
+                <button onclick="filterPortfolio('design')" class="tab-btn px-4 py-2 rounded-full bg-slate-200 dark:bg-white/10 hover:bg-brand-red hover:text-white text-slate-700 dark:text-gray-300 transition">06. งานออกแบบ</button>
+                <button onclick="filterPortfolio('digital')" class="tab-btn px-4 py-2 rounded-full bg-slate-200 dark:bg-white/10 hover:bg-brand-red hover:text-white text-slate-700 dark:text-gray-300 transition">07. CLIPSTUDIO/PS</button>
+                <button onclick="filterPortfolio('cad')" class="tab-btn px-4 py-2 rounded-full bg-slate-200 dark:bg-white/10 hover:bg-brand-red hover:text-white text-slate-700 dark:text-gray-300 transition">08. SKETCHUP/CAD</button>
+                <button onclick="filterPortfolio('activities')" class="tab-btn px-4 py-2 rounded-full bg-slate-200 dark:bg-white/10 hover:bg-brand-red hover:text-white text-slate-700 dark:text-gray-300 transition">09. ภาพกิจกรรม</button>
+            </div>
+
+            <!-- Portfolio Grid Container -->
+            <div id="portfolio-items" class="grid grid-cols-2 md:grid-cols-4 gap-4">
+
+                <!-- ================= 01. People ================= -->
+                <!-- Div 1: รวม 4 รูป (ปก + 3) -->
+                <div class="port-item people gallery-card aspect-[3/4]" data-caption="01. ถ่ายภาพคน">
+                    <img src="คน/1/740845984_995901823263514_4097032299563309763_n.jpg" alt="" class="w-full h-full object-cover">
+                    <div class="album" hidden>
+                        <img src="คน/1/742619608_1621801806185587_2845853560194354887_n.jpg" alt="" loading="lazy">
+                        <img src="คน/1/753052562_2560318681066255_7131142061558995965_n.jpg" alt="" loading="lazy">
+                        <img src="คน/1/753105058_1024221466652853_7686019576646469302_n.jpg" alt="" loading="lazy">
+                    </div>
+                </div>
+                <!-- Div 2: รวม 3 รูป (ปก + 2) -->
+                <div class="port-item people gallery-card aspect-[3/4]" data-caption="01. ถ่ายภาพคน">
+                    <img src="คน/2/IMG_7833.JPG" alt="" class="w-full h-full object-cover">
+                    <div class="album" hidden>
+                        <img src="คน/2/IMG_9849.JPG" alt="" loading="lazy">
+                        <img src="คน/2/IMG_0367.JPG" alt="" loading="lazy">
+                    </div>
+                </div>
+                <!-- Div 3: รวม 4 รูป (ปก + 3) -->
+                <div class="port-item people gallery-card aspect-[3/4]" data-caption="01. ถ่ายภาพคน">
+                    <img src="คน/3/IMG_3456.JPG" alt="" class="w-full h-full object-cover">
+                    <div class="album" hidden>
+                        <img src="คน/3/IMG_3482.JPG" alt="" loading="lazy">
+                        <img src="คน/3/IMG_3493.JPG" alt="" loading="lazy">
+                        <img src="คน/3/IMG_3524.JPG" alt="" loading="lazy">
+                    </div>
+                </div>
+
+                <!-- ================= 02. Landscape ================= -->
+                <!-- Div 1: รวม 4 รูป (ปก + 3) -->
+                <div class="port-item view gallery-card aspect-[4/3] col-span-2" data-caption="02. ถ่ายภาพวิว">
+                    <img src="วิว/1/IMG_7837.JPG" alt="" class="w-full h-full object-cover">
+                    <div class="album" hidden>
+                        <img src="วิว/1/IMG_7846.JPG" alt="" loading="lazy">
+                        <img src="วิว/1/IMG_7849.JPG" alt="" loading="lazy">
+                        <img src="วิว/1/IMG_7850.JPG" alt="" loading="lazy">
+                    </div>
+                </div>
+                <!-- Div 2: รวม 3 รูป (ปก + 2) -->
+                <div class="port-item view gallery-card aspect-[4/3] col-span-2" data-caption="02. ถ่ายภาพวิว">
+                    <img src="วิว/IMG_0275.JPG" alt="" class="w-full h-full object-cover">
+                    <div class="album" hidden>
+                        <img src="วิว/IMG_5793.JPG" alt="" loading="lazy">
+                        <img src="วิว/IMG_8487.JPG" alt="" loading="lazy">
+                    </div>
+                </div>
+
+                <!-- ================= 03. Drawing ================= -->
+                <!-- Div 1: รวม 2 รูป (ปก + 1) -->
+                <div class="port-item drawing gallery-card aspect-[3/4]" data-caption="03. DRAWING">
+                    <img src="ขดำ 1/751870304_1401217851912462_5687736005521573145_n.jpg" alt="" class="w-full h-full object-cover rounded">
+                    <div class="album" hidden>
+                        <img src="ขดำ 1/755941036_1025235616578818_9041730793399771366_n.jpg" alt="" loading="lazy">
+                    </div>
+                </div>
+                <!-- Div 2: รวม 2 รูป (ปก + 1) -->
+                <div class="port-item drawing gallery-card aspect-[3/4]" data-caption="03. DRAWING">
+                    <img src="ขดำ 1/2/740271342_2258050788350161_5620225907558491138_n.jpg" alt="" class="w-full h-full object-cover rounded">
+                    <div class="album" hidden>
+                        <img src="ขดำ 1/2/740917281_1577199073753992_1367903762253917484_n.jpg" alt="" loading="lazy">
+                    </div>
+                </div>
+                <!-- Div 3: รวม 2 รูป (ปก + 1) -->
+                <div class="port-item drawing gallery-card aspect-[3/4]" data-caption="03. DRAWING">
+                    <img src="ขดำ 1/3/740365500_26875085678830995_3298512371488505146_n.jpg" alt="" class="w-full h-full object-cover rounded">
+                    <div class="album" hidden>
+                        <img src="ขดำ 1/3/742045412_1191511209819229_7289374551201916418_n.jpg" alt="" loading="lazy">
+                    </div>
+                </div>
+
+                <!-- ================= 04. Color ================= -->
+                <!-- Div 1: รวม 4 รูป (ปก + 3) -->
+                <div class="port-item color gallery-card aspect-[3/4]" data-caption="04. งานใช้สี">
+                    <img src="สี/1/740445507_1382978590423245_3455765190747263589_n.jpg" alt="" class="w-full h-full object-cover">
+                    <div class="album" hidden>
+                        <img src="สี/1/741143164_1362179888571820_4779197655374900942_n.jpg" alt="" loading="lazy">
+                        <img src="สี/1/742031111_1054899550371782_7344680545151754607_n.jpg" alt="" loading="lazy">
+                        <img src="สี/1/748801983_1564470855254792_7832951573868439918_n.jpg" alt="" loading="lazy">
+                    </div>
+                </div>
+                <!-- Div 2: รวม 4 รูป (ปก + 3) -->
+                <div class="port-item color gallery-card aspect-[3/4]" data-caption="04. งานใช้สี">
+                    <img src="สี/751764520_2132318977350251_7012972923074629372_n.jpg" alt="" class="w-full h-full object-cover">
+                    <div class="album" hidden>
+                        <img src="สี/752609435_2091998894859684_6579620438997974896_n.jpg" alt="" loading="lazy">
+                        <img src="สี/753169351_3029645457367270_1464806454658439130_n.jpg" alt="" loading="lazy">
+                        <img src="สี/754914856_1104593448895087_4411215386547280586_n.jpg" alt="" loading="lazy">
+                    </div>
+                </div>
+
+                <!-- ================= 05. Comic ================= -->
+                <!-- Div 1: รวม 7 รูป (ปก + 6) -->
+                <div class="port-item comic gallery-card aspect-[3/4]" data-caption="05. ออกแบบการ์ตูน">
+                    <img src="การ์ตูน/740325750_1943791620357621_6356274143491128434_n.jpg" alt="" class="w-full h-full object-cover">
+                    <div class="album" hidden>
+                        <img src="การ์ตูน/740562679_841836708867309_1514782320960684603_n.jpg" alt="" loading="lazy">
+                        <img src="การ์ตูน/750146931_1401995848409768_5182396406788142889_n.jpg" alt="" loading="lazy">
+                        <img src="การ์ตูน/753247150_1029248213414710_5949076724170976149_n.jpg" alt="" loading="lazy">
+                        <img src="การ์ตูน/753418053_1449413290285003_1229177577773065846_n.jpg" alt="" loading="lazy">
+                        <img src="การ์ตูน/755033411_1692232002014351_7182477716445899649_n.jpg" alt="" loading="lazy">
+                        <img src="การ์ตูน/755170731_2166850993875340_4275030574718086357_n.jpg" alt="" loading="lazy">
+                    </div>
+                </div>
+
+                <!-- ================= 06. Design ================= -->
+                <!-- Div 1: รวม 2 รูป (ปก + 1) -->
+                <div class="port-item design gallery-card aspect-square" data-caption="06. งานออกแบบ">
+                    <img src="ออกแบบ/1/741838513_885786454602139_8311900405218141455_n.jpg" alt="" class="w-full h-full object-cover">
+                    <div class="album" hidden>
+                        <img src="ออกแบบ/1/753545865_2570475250062894_7154502677380561937_n.jpg" alt="" loading="lazy">
+                    </div>
+                </div>
+                <!-- Div 2: รวม 3 รูป (ปก + 2) -->
+                <div class="port-item design gallery-card aspect-square" data-caption="06. งานออกแบบ">
+                    <img src="ออกแบบ/2/741838513_1859963328788402_6942992562579456167_n.jpg" alt="" class="w-full h-full object-cover">
+                    <div class="album" hidden>
+                        <img src="ออกแบบ/2/743909986_1720204118930930_2713401407426660508_n.jpg" alt="" loading="lazy">
+                        <img src="ออกแบบ/2/749584433_1039044658714215_8424157674344362543_n.jpg" alt="" loading="lazy">
+                    </div>
+                </div>
+                <!-- Div 3: รูปเดียว -->
+                <div class="port-item design gallery-card aspect-square" data-caption="06. งานออกแบบ">
+                    <img src="ออกแบบ/748480349_1571447961229454_3131127253278096157_n.jpg" alt="" class="w-full h-full object-cover">
+                </div>
+                <!-- Div 4: รูปเดียว -->
+                <div class="port-item design gallery-card aspect-square" data-caption="06. งานออกแบบ">
+                    <img src="ออกแบบ/ลายผ้า.jpg" alt="" class="w-full h-full object-cover">
+                </div>
+                <!-- Div 5: รูปเดียว -->
+                <div class="port-item design gallery-card aspect-square" data-caption="06. งานออกแบบ">
+                    <img src="ออกแบบ/สระแก้า-ลายผ้า.jpg" alt="" class="w-full h-full object-cover">
+                </div>
+                <!-- Div 6: รูปเดียว -->
+                <div class="port-item design gallery-card aspect-square" data-caption="06. งานออกแบบ">
+                    <img src="ออกแบบ/ส่ง.jpg" alt="" class="w-full h-full object-cover">
+                </div>
+
+                <!-- ================= 07. Digital ================= -->
+                <!-- Div 1: รวม 3 รูป (ปก + 2) -->
+                <div class="port-item digital gallery-card aspect-[3/4] p-1" data-caption="07. CLIPSTUDIO/PS">
+                    <img src="ClipstudioPS/1/742110617_1391505089548073_7688411977168101364_n.jpg" alt="" class="w-full h-full object-cover rounded">
+                    <div class="album" hidden>
+                        <img src="ClipstudioPS/1/748907606_910933588065936_6913180552034468607_n.jpg" alt="" loading="lazy">
+                        <img src="ClipstudioPS/1/749952673_1324060249709711_9177837437022209591_n.jpg" alt="" loading="lazy">
+                    </div>
+                </div>
+                <!-- Div 2: รวม 2 รูป (ปก + 1) -->
+                <div class="port-item digital gallery-card aspect-[3/4]" data-caption="07. CLIPSTUDIO/PS">
+                    <img src="ClipstudioPS/2/740686156_1721628468956504_9164461221727405755_n.jpg" alt="" class="w-full h-full object-cover">
+                    <div class="album" hidden>
+                        <img src="ClipstudioPS/2/750615364_1735166604049775_8651873247245701512_n.jpg" alt="" loading="lazy">
+                    </div>
+                </div>
+                <!-- Div 3: รวม 2 รูป (ปก + 1) -->
+                <div class="port-item digital gallery-card aspect-[3/4]" data-caption="07. CLIPSTUDIO/PS">
+                    <img src="ClipstudioPS/740205681_1032714529339374_9125000613683748053_n.jpg" alt="" class="w-full h-full object-cover">
+                    <div class="album" hidden>
+                        <img src="ClipstudioPS/747880872_1732212071453615_448431795148364102_n.jpg" alt="" loading="lazy">
+                    </div>
+                </div>
+
+                <!-- ================= 08. CAD ================= -->
+                <!-- Div 1: รวม 2 รูป (ปก + 1) -->
+                <div class="port-item cad gallery-card aspect-[1/1] col-span-2" data-caption="08. SKETCHUP/CAD">
+                    <img src="SketchUptocad/1/Screenshot 2026-07-24 161413.png" alt="" class="w-full h-full object-cover">
+                    <div class="album" hidden>
+                        <img src="SketchUptocad/1/Screenshot 2026-07-24 161516.png" alt="" loading="lazy">
+                    </div>
+                </div>
+                <!-- Div 2: รวม 3 รูป (ปก + 2) -->
+                <div class="port-item cad gallery-card aspect-[1/1] col-span-2" data-caption="08. SKETCHUP/CAD">
+                    <img src="SketchUptocad/2/Portfolio (1).jpg" alt="" class="w-full h-full object-contain">
+                    <div class="album" hidden>
+                        <img src="SketchUptocad/2/Portfolio (2).jpg" alt="" loading="lazy">
+                        <img src="SketchUptocad/2/เยะ.jpg" alt="" loading="lazy">
+                    </div>
+                </div>
+                <!-- Div 3: รูปเดียว -->
+                <div class="port-item cad gallery-card aspect-[1/1] col-span-2" data-caption="08. SKETCHUP/CAD">
+                    <img src="SketchUptocad/740966939_1362926955245383_3373350224768472898_n.jpg" alt="" class="w-full h-full object-contain">
+                </div>
+
+                <!-- ================= 09. Activities (รูปเดียวทั้งหมด) ================= -->
+                <div class="port-item activities gallery-card aspect-[4/3]" data-caption="09. ภาพกิจกรรม">
+                    <img src="ภาพกิจกรรม/353147805_1234366357215771_2596034321573992212_n.jpg" alt="" class="w-full h-full object-cover">
+                </div>
+                <div class="port-item activities gallery-card aspect-[4/3]" data-caption="09. ภาพกิจกรรม">
+                    <img src="ภาพกิจกรรม/741091850_1053626790474608_4954572106572691752_n.jpg" alt="" class="w-full h-full object-cover">
+                </div>
+                <div class="port-item activities gallery-card aspect-[4/3]" data-caption="09. ภาพกิจกรรม">
+                    <img src="ภาพกิจกรรม/741324061_1351804786421629_5732075862742814092_n.jpg" alt="" class="w-full h-full object-cover">
+                </div>
+                <div class="port-item activities gallery-card aspect-[4/3]" data-caption="09. ภาพกิจกรรม">
+                    <img src="ภาพกิจกรรม/741402090_27823067163971506_1365039425535757750_n.jpg" alt="" class="w-full h-full object-cover">
+                </div>
+                <div class="port-item activities gallery-card aspect-[4/3] col-span-2" data-caption="09. ภาพกิจกรรม">
+                    <img src="ภาพกิจกรรม/741591864_1549906663349257_4071092247662335066_n.jpg" alt="" class="w-full h-full object-cover">
+                </div>
+                <div class="port-item activities gallery-card aspect-[3/4] col-span-2" data-caption="09. ภาพกิจกรรม">
+                    <img src="ภาพกิจกรรม/753266984_1061800793045599_3021858893345779783_n.jpg" alt="" class="w-full h-full object-cover">
+                </div>
+
+            </div>
+        </section>
+
+        <!-- SECTION 5: CERTIFICATES / เกียรติบัตร (รูปที่ 12) -->
+        <section id="certificates" class="py-20 px-4 max-w-7xl mx-auto">
+            <div class="text-center mb-12">
+                <span class="section-ribbon text-xl">เกียรติบัตร & รางวัล</span>
+                <h2 class="text-4xl font-bold text-slate-900 dark:text-white mt-4">CERTIFICATES & AWARDS</h2>
+                <p class="text-slate-600 dark:text-gray-400 text-sm mt-2">ประกาศนียบัตรแสดงศักยภาพ การอบรมเชิงปฏิบัติการ และการปฏิบัติหน้าที่</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+                <!-- Certificate 1: Love Your Local Phitsanulok -->
+                <div class="lg:col-span-12 glass-panel bg-white dark:bg-[#18181f] p-6 rounded-2xl border border-slate-200 dark:border-white/10 shadow-xl grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
+                    <div class="md:col-span-7 gallery-card aspect-[4/3]" onclick="openLightbox('เกียรติบัตร/513935412_31205779669020865_3400533100784852174_n.jpg', 'เกียรติบัตร - Love Your Local Phitsanulok')">
+                        <img src="เกียรติบัตร/513935412_31205779669020865_3400533100784852174_n.jpg" alt="" class="w-full h-full object-contain p-2 bg-white">
+                    </div>
+                    <div class="md:col-span-5 space-y-3 text-slate-800 dark:text-gray-200">
+                        <span class="px-3 py-1 bg-brand-red/10 text-brand-accent rounded-md text-xs font-semibold">TCDC & WEBTOON THAILAND</span>
+                        <h3 class="text-2xl font-bold text-slate-900 dark:text-white">Love Your Local Phitsanulok</h3>
+                        <p class="text-sm text-brand-accent font-medium">Turning Story Into Masterpieces</p>
+                        <p class="text-xs text-slate-500 dark:text-gray-400">ระหว่างวันที่ 21 - 22 มิถุนายน 2566 ณ ห้องสิริราชธานี สำนักศิลปะและวัฒนธรรม มหาวิทยาลัยราชภัฏพิบูลสงคราม</p>
+                    </div>
+                </div>
+
+                <!-- Certificate 2: พิพิธภัณฑสถานแห่งชาติ กำแพงเพชร -->
+                <div class="lg:col-span-6 glass-panel bg-white dark:bg-[#18181f] p-6 rounded-2xl border border-slate-200 dark:border-white/10 shadow-xl space-y-4">
+                    <div class="gallery-card aspect-[4/3]" onclick="openLightbox('เกียรติบัตร/752698803_1791935478808572_2625761877495970495_n.jpg', 'เกียรติบัตร - พิพิธภัณฑสถานแห่งชาติ กำแพงเพชร')">
+                        <img src="เกียรติบัตร/752698803_1791935478808572_2625761877495970495_n.jpg" alt="" class="w-full h-full object-contain p-2 bg-white">
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-bold text-slate-900 dark:text-white">พิพิธภัณฑสถานแห่งชาติ กำแพงเพชร</h4>
+                        <p class="text-xs text-slate-600 dark:text-gray-300 mt-1">เข้าร่วมกิจกรรมพิพิธภัณฑ์สร้างสรรค์ศิลป์ การอบรมเชิงปฏิบัติการ เรื่อง "การอนุรักษ์งานศิลป์ไทย : งานประดับทองเขียนสี แรงบันดาลใจจากลวดลายโบราณวัตถุ ศิลปวัตถุ ในพิพิธภัณฑสถานแห่งชาติ กำแพงเพชร"</p>
+                        <p class="text-xs text-brand-accent mt-2 font-semibold">ให้ไว้ ณ วันที่ ๒๘ สิงหาคม พุทธศักราช ๒๕๖๖</p>
+                    </div>
+                </div>
+
+                <!-- Certificate 3: สโมสรนักศึกษา คณะเทคโนโลยีอุตสาหกรรม -->
+                <div class="lg:col-span-6 glass-panel bg-white dark:bg-[#18181f] p-6 rounded-2xl border border-slate-200 dark:border-white/10 shadow-xl space-y-4">
+                    <div class="gallery-card aspect-[4/3]" onclick="openLightbox('เกียรติบัตร/753893339_1009902041842526_3002849978703273067_n.jpg', 'เกียรติบัตร - สโมสรนักศึกษา หัวหน้าฝ่ายตกแต่งสถานที่')">
+                        <img src="เกียรติบัตร/753893339_1009902041842526_3002849978703273067_n.jpg" alt="" class="w-full h-full object-contain p-2 bg-white">
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-bold text-slate-900 dark:text-white">คณะเทคโนโลยีอุตสาหกรรม มหาวิทยาลัยราชภัฏกำแพงเพชร</h4>
+                        <p class="text-xs text-slate-600 dark:text-gray-300 mt-1">ปฏิบัติหน้าที่สโมสรนักศึกษา คณะเทคโนโลยีอุตสาหกรรม ปีการศึกษา ๒๕๖๗ ในตำแหน่ง <span class="text-brand-accent font-bold">"หัวหน้าฝ่ายตกแต่งสถานที่"</span></p>
+                        <p class="text-xs text-brand-accent mt-2 font-semibold">ให้ไว้ ณ วันที่ ๓๑ มีนาคม พ.ศ. ๒๕๖๘</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- SECTION 6: CONTACT / ช่องทางติดต่อ (SECTION 11) -->
+        <section id="contact-section" class="relative py-24 px-4 border-t border-slate-200 dark:border-white/10 overflow-hidden">
+            <!-- Glow background -->
+            <div class="absolute inset-0 pointer-events-none">
+                <div class="absolute -top-24 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-brand-red/20 blur-[120px] rounded-full"></div>
+            </div>
+
+            <div class="relative max-w-6xl mx-auto">
+                <!-- Section Header -->
+                <div class="text-center mb-14">
+                    <span class="section-ribbon text-xl">ช่องทางติดต่อ</span>
+                    <h2 class="text-4xl sm:text-5xl font-bold text-slate-900 dark:text-white mt-4">CONTACT</h2>
+                    <p class="text-slate-600 dark:text-gray-400 text-sm sm:text-base mt-3 max-w-xl mx-auto">
+                        สนใจผลงาน หรืออยากร่วมงานด้วยกัน? ติดต่อได้ทุกช่องทางด้านล่างนี้เลย
+                    </p>
+                </div>
+
+                <!-- Contact Cards -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- Phone -->
+                    <a href="tel:+66993124780" class="call-link relative z-10 group bg-white dark:bg-[#18181f] p-6 rounded-2xl border border-slate-200 dark:border-white/10 text-center shadow-lg hover:-translate-y-2 hover:border-green-500 hover:shadow-green-500/20 transition-all duration-300">
+                        <div class="w-16 h-16 mx-auto rounded-2xl bg-green-600/20 text-green-500 flex items-center justify-center text-2xl group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-phone"></i>
+                        </div>
+                        <div class="mt-4 text-xs uppercase tracking-widest text-gray-500">โทรศัพท์</div>
+                        <div class="mt-1 text-lg font-bold text-slate-900 dark:text-white">099-312-4780</div>
+                        <div class="mt-3 text-xs text-green-500 font-medium">แตะเพื่อโทร <i class="fa-solid fa-arrow-right ml-1"></i></div>
+                    </a>
+
+                    <!-- Line -->
+                    <div class="group bg-white dark:bg-[#18181f] p-6 rounded-2xl border border-slate-200 dark:border-white/10 text-center shadow-lg hover:-translate-y-2 hover:border-green-400 hover:shadow-green-400/20 transition-all duration-300">
+                        <div class="w-16 h-16 mx-auto rounded-2xl bg-green-500/20 text-green-400 flex items-center justify-center text-3xl group-hover:scale-110 transition-transform">
+                            <i class="fa-brands fa-line"></i>
+                        </div>
+                        <div class="mt-4 text-xs uppercase tracking-widest text-gray-500">Line ID</div>
+                        <div class="mt-1 text-lg font-bold text-slate-900 dark:text-white">seri555op</div>
+                        <button type="button" onclick="copyLineId(this)" class="mt-3 text-xs text-green-400 font-medium hover:underline">
+                            <i class="fa-regular fa-copy mr-1"></i><span>คัดลอก ID</span>
+                        </button>
+                    </div>
+
+                    <!-- Facebook -->
+                    <a href="https://www.facebook.com/sea.siri.2025" target="_blank" rel="noopener" class="group bg-white dark:bg-[#18181f] p-6 rounded-2xl border border-slate-200 dark:border-white/10 text-center shadow-lg hover:-translate-y-2 hover:border-blue-500 hover:shadow-blue-500/20 transition-all duration-300">
+                        <div class="w-16 h-16 mx-auto rounded-2xl bg-blue-600/20 text-blue-500 flex items-center justify-center text-3xl group-hover:scale-110 transition-transform">
+                            <i class="fa-brands fa-facebook"></i>
+                        </div>
+                        <div class="mt-4 text-xs uppercase tracking-widest text-gray-500">Facebook</div>
+                        <div class="mt-1 text-lg font-bold text-slate-900 dark:text-white">Sea SiRi</div>
+                        <div class="mt-3 text-xs text-blue-500 font-medium">เยี่ยมชมโปรไฟล์ <i class="fa-solid fa-arrow-right ml-1"></i></div>
+                    </a>
+
+                    <!-- Instagram -->
+                    <a href="https://www.instagram.com/jao._.umi/" target="_blank" rel="noopener" class="group bg-white dark:bg-[#18181f] p-6 rounded-2xl border border-slate-200 dark:border-white/10 text-center shadow-lg hover:-translate-y-2 hover:border-pink-500 hover:shadow-pink-500/20 transition-all duration-300">
+                        <div class="w-16 h-16 mx-auto rounded-2xl bg-pink-600/20 text-pink-500 flex items-center justify-center text-3xl group-hover:scale-110 transition-transform">
+                            <i class="fa-brands fa-instagram"></i>
+                        </div>
+                        <div class="mt-4 text-xs uppercase tracking-widest text-gray-500">Instagram</div>
+                        <div class="mt-1 text-lg font-bold text-slate-900 dark:text-white">Jao_Umi</div>
+                        <div class="mt-3 text-xs text-pink-500 font-medium">ติดตามผลงาน <i class="fa-solid fa-arrow-right ml-1"></i></div>
+                    </a>
+                </div>
+
+                <!-- CTA Banner -->
+                <div class="mt-12 bg-gradient-to-r from-brand-red to-red-900 rounded-3xl p-8 sm:p-10 text-center text-white shadow-2xl shadow-brand-red/30">
+                    <h3 class="text-2xl sm:text-3xl font-bold">มาสร้างผลงานดี ๆ ไปด้วยกัน</h3>
+                    <p class="text-sm sm:text-base text-white/80 mt-2">พร้อมเรียนรู้และรับงานออกแบบกราฟิกเสมอ</p>
+                    <a href="tel:+66993124780" class="call-link relative z-10 inline-flex items-center gap-2 mt-6 px-6 py-3 rounded-full bg-white text-brand-red font-semibold hover:scale-105 transition-transform">
+                        <i class="fa-solid fa-phone"></i> ติดต่อเลย
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-slate-900 text-gray-400 py-12 px-4 text-center relative border-t border-white/10">
+        <div class="max-w-7xl mx-auto space-y-6">
+            <div class="flex items-center justify-center gap-3">
+                <div class="w-8 h-8 rounded bg-brand-red text-white flex items-center justify-center font-bold text-sm">PS</div>
+                <span class="font-title font-bold text-xl text-white">Pongsiri Siripong Portfolio</span>
+            </div>
+            <p class="text-sm max-w-md mx-auto text-gray-400">
+                สาขาวิชาออกแบบผลิตภัณฑ์และกราฟิก คณะเทคโนโลยีอุตสาหกรรม มหาวิทยาลัยราชภัฏกำแพงเพชร
+            </p>
+            <div class="flex justify-center gap-6 text-lg text-gray-300">
+                <a href="https://www.facebook.com/sea.siri.2025" target="_blank" class="hover:text-brand-accent transition"><i class="fa-brands fa-facebook"></i></a>
+                <a href="https://www.instagram.com/jao._.umi/" target="_blank" class="hover:text-brand-accent transition"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+            <p class="text-xs text-gray-500">
+                &copy; 2026 Pongsiri Siripong Portfolio. All Rights Reserved.
+            </p>
+            <button id="back-to-top" class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 hover:bg-brand-red text-xs text-gray-300 hover:text-white transition">
+                <i class="fa-solid fa-arrow-up"></i> กลับสู่ด้านบน (Back to Top)
+            </button>
+        </div>
+    </footer>
+
+    <div id="toast" class="fixed bottom-6 left-1/2 -translate-x-1/2 z-[70] px-5 py-3 rounded-full bg-black/90 text-white text-sm border border-white/10 shadow-2xl opacity-0 pointer-events-none transition-opacity duration-300"></div>
+    <!-- IMAGE VIEWER (ALBUM / FILM STRIP) -->
+    <div id="viewer" role="dialog" aria-modal="true" aria-label="ดูรูปผลงาน">
+        <div class="viewer-top">
+            <div id="viewer-counter" class="text-sm text-white/80 font-medium tabular-nums"></div>
+
+            <div class="viewer-tools">
+                <button type="button" id="zoom-out" class="viewer-btn" title="ลดขนาด"><i class="fa-solid fa-minus"></i></button>
+                <span id="zoom-label" class="zoom-label">100%</span>
+                <button type="button" id="zoom-in" class="viewer-btn" title="เพิ่มขนาด"><i class="fa-solid fa-plus"></i></button>
+                <button type="button" id="zoom-reset" class="viewer-btn" title="รีเซ็ตขนาด"><i class="fa-solid fa-expand"></i></button>
+                <button type="button" id="viewer-close" class="viewer-btn ml-2" title="ปิด (Esc)"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+        </div>
+
+        <div class="viewer-stage">
+            <button type="button" id="viewer-prev" class="viewer-btn nav-arrow prev" title="ก่อนหน้า"><i class="fa-solid fa-chevron-left"></i></button>
+            <div id="viewer-film" class="film"></div>
+            <button type="button" id="viewer-next" class="viewer-btn nav-arrow next" title="ถัดไป"><i class="fa-solid fa-chevron-right"></i></button>
+        </div>
+
+        <div class="viewer-bottom">
+            <p id="viewer-caption"></p>
+            <div id="viewer-dots" class="viewer-dots"></div>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // Dark / Light Theme Switching
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const themeIcon = document.getElementById('theme-icon');
+
+        themeToggleBtn.addEventListener('click', () => {
+            document.documentElement.classList.toggle('dark');
+            if (document.documentElement.classList.contains('dark')) {
+                themeIcon.className = 'fa-solid fa-moon text-lg text-amber-400';
+            } else {
+                themeIcon.className = 'fa-solid fa-sun text-lg text-amber-500';
+            }
+        });
+
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Portfolio Tab Filter Functionality
+        function filterPortfolio(category) {
+            const items = document.querySelectorAll('.port-item');
+            const buttons = document.querySelectorAll('.tab-btn');
+
+            buttons.forEach(btn => {
+                btn.classList.remove('bg-brand-red', 'text-white', 'active');
+                btn.classList.add('bg-slate-200', 'dark:bg-white/10', 'text-slate-700', 'dark:text-gray-300');
+            });
+
+            event.currentTarget.classList.add('bg-brand-red', 'text-white', 'active');
+            event.currentTarget.classList.remove('bg-slate-200', 'dark:bg-white/10', 'text-slate-700', 'dark:text-gray-300');
+
+            items.forEach(item => {
+                if (category === 'all' || item.classList.contains(category)) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+
+        // ===================== IMAGE VIEWER (ALBUM / FILM STRIP) =====================
+        const viewer      = document.getElementById('viewer');
+        const film        = document.getElementById('viewer-film');
+        const vCaption    = document.getElementById('viewer-caption');
+        const vCounter    = document.getElementById('viewer-counter');
+        const vDots       = document.getElementById('viewer-dots');
+        const btnPrev     = document.getElementById('viewer-prev');
+        const btnNext     = document.getElementById('viewer-next');
+        const btnZoomIn   = document.getElementById('zoom-in');
+        const btnZoomOut  = document.getElementById('zoom-out');
+        const btnZoomRst  = document.getElementById('zoom-reset');
+        const zoomLabel   = document.getElementById('zoom-label');
+
+        const ZOOM_MIN = 0.4, ZOOM_MAX = 1.6, ZOOM_STEP = 0.2;
+        const BASE_VH = 68;   // ความสูงรูปที่ซูม 100% (หน่วย vh)
+        const BASE_VW = 90;   // ความกว้างสูงสุดที่ซูม 100% (หน่วย vw)
+
+        let zoom = 1;
+        let currentIndex = 0;
+        let totalImages = 0;
+
+        // --- 1) เปิดอัลบั้มจากการ์ด: รูปปก + รูปใน .album ---
+        function openAlbum(card) {
+            const coverEl = card.querySelector(':scope > img');
+            const srcs = [coverEl ? coverEl.getAttribute('src') || '' : ''];
+            card.querySelectorAll('.album img').forEach(img => {
+                srcs.push(img.getAttribute('src') || '');
+            });
+            openViewer(srcs, card.dataset.caption || '');
+        }
+
+        // --- 2) ฟังก์ชันหลักของ viewer ---
+        function openViewer(srcs, caption) {
+            film.innerHTML = '';
+            vDots.innerHTML = '';
+            totalImages = srcs.length;
+            currentIndex = 0;
+            zoom = 1;
+
+            srcs.forEach((src, i) => {
+                const img = document.createElement('img');
+                img.className = 'film-item';
+                img.alt = caption + ' (' + (i + 1) + '/' + srcs.length + ')';
+                img.draggable = false;
+                if (src) img.src = src;
+                film.appendChild(img);
+
+                const dot = document.createElement('button');
+                dot.type = 'button';
+                dot.setAttribute('aria-label', 'รูปที่ ' + (i + 1));
+                dot.addEventListener('click', () => goTo(i));
+                vDots.appendChild(dot);
+            });
+
+            const isAlbum = totalImages > 1;
+            btnPrev.style.display = isAlbum ? '' : 'none';
+            btnNext.style.display = isAlbum ? '' : 'none';
+            vDots.style.display   = isAlbum ? '' : 'none';
+            vCounter.style.display = isAlbum ? '' : 'none';
+
+            vCaption.textContent = caption;
+            applyZoom();
+            updateIndicators();
+
+            viewer.classList.add('open');
+            document.body.style.overflow = 'hidden';
+            film.scrollLeft = 0;
+        }
+
+        function closeViewer() {
+            viewer.classList.remove('open');
+            document.body.style.overflow = 'auto';
+            film.innerHTML = '';
+        }
+
+        // รองรับของเดิม (เกียรติบัตร เรียก openLightbox('', '...') อยู่)
+        function openLightbox(src, caption) { openViewer([src], caption); }
+        function closeLightbox() { closeViewer(); }
+
+        // --- 3) ซูม (ลด/เพิ่มขนาดรูป) ---
+        function applyZoom() {
+            film.querySelectorAll('.film-item').forEach(img => {
+                img.style.maxHeight = (BASE_VH * zoom) + 'vh';
+                img.style.maxWidth  = (BASE_VW * zoom) + 'vw';
+            });
+            zoomLabel.textContent = Math.round(zoom * 100) + '%';
+            btnZoomOut.disabled = zoom <= ZOOM_MIN + 0.001;
+            btnZoomIn.disabled  = zoom >= ZOOM_MAX - 0.001;
+        }
+
+        function setZoom(z) {
+            zoom = Math.min(ZOOM_MAX, Math.max(ZOOM_MIN, Math.round(z * 10) / 10));
+            applyZoom();
+            // คงตำแหน่งรูปปัจจุบันไว้กลางจอหลังเปลี่ยนขนาด
+            requestAnimationFrame(() => goTo(currentIndex, true));
+        }
+
+        btnZoomIn.addEventListener('click',  () => setZoom(zoom + ZOOM_STEP));
+        btnZoomOut.addEventListener('click', () => setZoom(zoom - ZOOM_STEP));
+        btnZoomRst.addEventListener('click', () => setZoom(1));
+
+        // --- 4) เลื่อนไปรูปที่ต้องการ ---
+        function goTo(index, instant = false) {
+            if (!totalImages) return;
+            currentIndex = Math.max(0, Math.min(totalImages - 1, index));
+            const target = film.children[currentIndex];
+            if (target) {
+                target.scrollIntoView({
+                    behavior: instant ? 'auto' : 'smooth',
+                    inline: 'center',
+                    block: 'nearest'
+                });
+            }
+            updateIndicators();
+        }
+
+        function updateIndicators() {
+            vCounter.textContent = (currentIndex + 1) + ' / ' + totalImages;
+            vDots.querySelectorAll('button').forEach((d, i) => {
+                d.classList.toggle('active', i === currentIndex);
+            });
+            btnPrev.disabled = currentIndex <= 0;
+            btnNext.disabled = currentIndex >= totalImages - 1;
+        }
+
+        btnPrev.addEventListener('click', () => goTo(currentIndex - 1));
+        btnNext.addEventListener('click', () => goTo(currentIndex + 1));
+
+        // อัปเดตตัวนับตามตำแหน่งที่เลื่อนอยู่จริง (เวลานิ้วปัด/ลาก)
+        let scrollTimer = null;
+        film.addEventListener('scroll', () => {
+            clearTimeout(scrollTimer);
+            scrollTimer = setTimeout(() => {
+                const center = film.scrollLeft + film.clientWidth / 2;
+                let best = 0, bestDist = Infinity;
+                Array.from(film.children).forEach((el, i) => {
+                    const mid = el.offsetLeft + el.offsetWidth / 2;
+                    const dist = Math.abs(mid - center);
+                    if (dist < bestDist) { bestDist = dist; best = i; }
+                });
+                currentIndex = best;
+                updateIndicators();
+            }, 60);
+        }, { passive: true });
+
+        // --- 5) ลากด้วยเมาส์ + ล้อเมาส์เลื่อนแนวนอน ---
+        let isDown = false, startX = 0, startScroll = 0;
+
+        film.addEventListener('pointerdown', (e) => {
+            if (e.pointerType !== 'mouse') return; // มือถือใช้การปัดตามปกติ
+            isDown = true;
+            startX = e.clientX;
+            startScroll = film.scrollLeft;
+            film.classList.add('dragging');
+        });
+        window.addEventListener('pointermove', (e) => {
+            if (!isDown) return;
+            film.scrollLeft = startScroll - (e.clientX - startX);
+        });
+        window.addEventListener('pointerup', () => {
+            isDown = false;
+            film.classList.remove('dragging');
+        });
+
+        film.addEventListener('wheel', (e) => {
+            if (Math.abs(e.deltaY) > Math.abs(e.deltaX) && film.scrollWidth > film.clientWidth) {
+                e.preventDefault();
+                film.scrollLeft += e.deltaY;
+            }
+        }, { passive: false });
+
+        // --- 6) ปิด viewer / คีย์บอร์ด ---
+        document.getElementById('viewer-close').addEventListener('click', closeViewer);
+
+        // คลิกพื้นที่ว่างรอบรูปเพื่อปิด
+        viewer.addEventListener('click', (e) => {
+            if (e.target === viewer || e.target === film ||
+                e.target.classList.contains('viewer-stage') ||
+                e.target.classList.contains('viewer-bottom')) {
+                closeViewer();
+            }
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (!viewer.classList.contains('open')) return;
+            if (e.key === 'Escape')      closeViewer();
+            if (e.key === 'ArrowRight')  goTo(currentIndex + 1);
+            if (e.key === 'ArrowLeft')   goTo(currentIndex - 1);
+            if (e.key === '+' || e.key === '=') setZoom(zoom + ZOOM_STEP);
+            if (e.key === '-')           setZoom(zoom - ZOOM_STEP);
+            if (e.key === '0')           setZoom(1);
+        });
+
+        // --- 7) ผูกการคลิกการ์ดผลงาน + ใส่ป้ายจำนวนรูป ---
+        document.querySelectorAll('#portfolio-items .port-item').forEach(card => {
+            const count = 1 + card.querySelectorAll('.album img').length;
+            if (count > 1) {
+                const badge = document.createElement('span');
+                badge.className = 'album-badge';
+                badge.innerHTML = '<i class="fa-regular fa-images"></i> ' + count;
+                card.appendChild(badge);
+            }
+        });
+
+        document.getElementById('portfolio-items').addEventListener('click', (e) => {
+            const card = e.target.closest('.port-item');
+            if (card) openAlbum(card);
+        });
+        // ===== 1) Scroll Progress Bar =====
+        const progressBar = document.getElementById('scroll-progress');
+
+        function updateProgress() {
+            const scrollTop = window.scrollY;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const percent = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+            progressBar.style.width = percent + '%';
+        }
+        window.addEventListener('scroll', updateProgress, { passive: true });
+        window.addEventListener('resize', updateProgress);
+        updateProgress();
+
+        // ===== 2) Fade-in ทีละนิดเวลาเลื่อนลงมา =====
+        const revealSelectors = [
+            '#hero .space-y-6 > *',
+            '#hero .lg\\:col-span-5 > div',
+            'section .text-center > *',
+            '#about .lg\\:col-span-5 > div',
+            '#about .lg\\:col-span-7 > div',
+            '.port-item',
+            '#certificates .glass-panel',
+            '#contact-section .grid > *',
+            '#contact-section .bg-gradient-to-r'
+        ];
+
+        const revealEls = document.querySelectorAll(revealSelectors.join(','));
+
+        const revealObserver = new IntersectionObserver((entries) => {
+            // เรียงตามตำแหน่ง แล้วหน่วงเวลาทีละนิด (stagger)
+            const visible = entries.filter(e => e.isIntersecting);
+            visible.forEach((entry, i) => {
+                const el = entry.target;
+                el.style.setProperty('--reveal-delay', (i * 100) + 'ms');
+                el.classList.add('is-visible');
+                revealObserver.unobserve(el);
+            });
+        }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+        revealEls.forEach(el => {
+            el.classList.add('reveal');
+            // เมื่อ animation จบ ให้ปล่อย transform คืน เพื่อไม่ให้ชน hover effect ของการ์ด
+            el.addEventListener('animationend', () => el.classList.add('reveal-done'), { once: true });
+            revealObserver.observe(el);
+        });
+
+        // ===== 3) Smooth Scroll เวลากด navbar / a href="#..." / Back to Top =====
+        document.documentElement.style.scrollBehavior = 'auto'; // กันชนกับ scroll-smooth ของ Tailwind
+
+        let scrollAnimId = null;
+
+        function easeInOutCubic(t) {
+            return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+        }
+
+        function cancelSmoothScroll() {
+            if (scrollAnimId !== null) {
+                cancelAnimationFrame(scrollAnimId);
+                scrollAnimId = null;
+            }
+        }
+
+        function smoothScrollTo(targetY, duration) {
+            cancelSmoothScroll(); // กันหลายอนิเมชันซ้อนกัน
+
+            const maxY = document.documentElement.scrollHeight - window.innerHeight;
+            targetY = Math.max(0, Math.min(targetY, maxY));
+
+            const startY = window.scrollY;
+            const distance = targetY - startY;
+            if (Math.abs(distance) < 2) return;
+
+            // ยิ่งระยะไกล ยิ่งใช้เวลานานขึ้น (ต่ำสุด 600ms สูงสุด 2000ms)
+            const time = duration ?? Math.min(2000, Math.max(600, Math.abs(distance) * 0.35));
+            let startTime = null;
+
+            function step(now) {
+                if (startTime === null) startTime = now;
+                const progress = Math.min((now - startTime) / time, 1);
+                window.scrollTo(0, startY + distance * easeInOutCubic(progress));
+                if (progress < 1) {
+                    scrollAnimId = requestAnimationFrame(step);
+                } else {
+                    scrollAnimId = null;
+                }
+            }
+            scrollAnimId = requestAnimationFrame(step);
+        }
+
+        // ถ้าผู้ใช้ลองเลื่อนเองระหว่างอนิเมชัน ให้หยุดทันที
+        ['wheel', 'touchstart', 'keydown'].forEach(evt => {
+            window.addEventListener(evt, cancelSmoothScroll, { passive: true });
+        });
+
+        // ลิงก์ a href="#..." ทั้งหมด
+        document.querySelectorAll('a[href^="#"]').forEach(link => {
+            link.addEventListener('click', (e) => {
+                const href = link.getAttribute('href');
+                if (href.length < 2) return;
+
+                const target = document.querySelector(href);
+                if (!target) return;
+
+                e.preventDefault();
+                const headerHeight = document.getElementById('main-header').offsetHeight;
+                const targetY = target.getBoundingClientRect().top + window.scrollY - headerHeight + 1;
+
+                smoothScrollTo(targetY);
+                history.pushState(null, '', href);
+            });
+        });
+
+        // ปุ่ม Back to Top
+        document.getElementById('back-to-top').addEventListener('click', () => {
+            smoothScrollTo(0);
+        });
+        // ===== คัดลอก Line ID =====
+        async function copyLineId(btn) {
+            if (btn.dataset.busy === '1') return; // กันกดซ้ำระหว่างแสดง "คัดลอกแล้ว"
+
+            const lineId = 'seri555op';
+            let ok = false;
+
+            // วิธีหลัก: Clipboard API (ต้องใช้บน https หรือ localhost)
+            try {
+                await navigator.clipboard.writeText(lineId);
+                ok = true;
+            } catch (err) {
+                // วิธีสำรอง: ใช้ textarea ชั่วคราว (ใช้ได้แม้เปิดไฟล์ตรง ๆ หรือเบราว์เซอร์เก่า)
+                const ta = document.createElement('textarea');
+                ta.value = lineId;
+                ta.setAttribute('readonly', '');
+                ta.style.position = 'fixed';
+                ta.style.opacity = '0';
+                document.body.appendChild(ta);
+                ta.select();
+                try { ok = document.execCommand('copy'); } catch (e) { ok = false; }
+                document.body.removeChild(ta);
+            }
+
+            const icon = btn.querySelector('i');
+            const label = btn.querySelector('span');
+            const oldIconClass = icon.className;
+            const oldText = label.textContent;
+
+            btn.dataset.busy = '1';
+            if (ok) {
+                icon.className = 'fa-solid fa-check mr-1';
+                label.textContent = 'คัดลอกแล้ว';
+            } else {
+                icon.className = 'fa-solid fa-triangle-exclamation mr-1';
+                label.textContent = 'คัดลอกไม่สำเร็จ';
+            }
+
+            setTimeout(() => {
+                icon.className = oldIconClass;
+                label.textContent = oldText;
+                btn.dataset.busy = '0';
+            }, 2000);
+        }
+        // ===== ปุ่มโทร: เด้งเข้าแอปโทรบนมือถือ / คัดลอกเบอร์บนคอม =====
+        const PHONE_DISPLAY = '099-312-4780';
+
+        function showToast(msg) {
+            const toast = document.getElementById('toast');
+            toast.textContent = msg;
+            toast.style.opacity = '1';
+            clearTimeout(showToast._t);
+            showToast._t = setTimeout(() => { toast.style.opacity = '0'; }, 2500);
+        }
+
+        function isMobileDevice() {
+            return /Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent)
+                || (navigator.maxTouchPoints > 1 && /Mac/i.test(navigator.platform)); // iPadOS
+        }
+
+        document.querySelectorAll('a.call-link').forEach(link => {
+            link.addEventListener('click', async (e) => {
+                e.preventDefault();
+                const telUrl = link.getAttribute('href'); // tel:+66993124780
+
+                if (isMobileDevice()) {
+                    window.location.href = telUrl; // เด้งเข้าแอปโทรพร้อมเบอร์
+                } else {
+                    // คอม: โทรไม่ได้ จึงคัดลอกเบอร์ให้แทน
+                    try {
+                        await navigator.clipboard.writeText(PHONE_DISPLAY);
+                        showToast('คัดลอกเบอร์ ' + PHONE_DISPLAY + ' แล้ว');
+                    } catch (err) {
+                        showToast('เบอร์โทร: ' + PHONE_DISPLAY);
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
